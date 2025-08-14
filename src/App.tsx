@@ -175,7 +175,7 @@ function App() {
               <MessageCircle className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Review Analysis Tool
+              Sentiment Analysis Tool
             </h1>
             <p className="text-xl text-blue-200 max-w-2xl mx-auto">
               Analyze sentiment, get insights, and rephrase your reviews with AI-powered precision
