@@ -208,7 +208,6 @@ function App() {
                     onChange={(e) => setReviewText(e.target.value)}
                     placeholder="Type your review here..."
                     className="w-full h-32 p-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent resize-none"
-                    onKeyUp={analyzeSentiment}
                   />
                   
                   <button
