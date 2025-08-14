@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircle, RefreshCw, Copy, CheckCircle, AlertCircle, Meh, Ticket, Send } from 'lucide-react';
+import { API_ENDPOINTS } from './config/api';
 
 interface SentimentResult {
   final_sentiment: string;
@@ -44,7 +45,7 @@ function App() {
     setIsAnalyzing(true);
     try {
       // Call predict API
-      const predictResponse = await fetch('/predict', {
+      const predictResponse = await fetch(API_ENDPOINTS.predict, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: reviewText })
@@ -59,7 +60,7 @@ function App() {
       setSentiment(sentimentData);
 
       // Call explain API
-      const explainResponse = await fetch('/explain', {
+      const explainResponse = await fetch(API_ENDPOINTS.explain, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: reviewText })
@@ -84,7 +85,7 @@ function App() {
     
     setIsRephrasing(true);
     try {
-      const response = await fetch('/rephrase', {
+      const response = await fetch(API_ENDPOINTS.rephrase, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: reviewText })
